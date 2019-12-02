@@ -1,7 +1,7 @@
 import sys
 from datetime import date
 from peewee import *
-print('hello world')
+print('welcome to the contacts app')
 
 db = PostgresqlDatabase('contacts', user='postgres', password='',
                         host='localhost', port=5432)
@@ -33,6 +33,7 @@ def create_contact():
         new_contact = Contact(name=name_prompt, birthday=date(
             year, month, day), number=number_prompt)
         new_contact.save()
+        print("contact saved")
         create_contact()
     list_prompt = str(input("would you like to view all contacts y/n "))
     if list_prompt == "y":
