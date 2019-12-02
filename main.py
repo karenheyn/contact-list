@@ -42,14 +42,13 @@ def create_contact():
     if search_prompt == "y":
         search()
     else:
+        print("goodbye")
         sys.exit()
 
 
 def list_all():
-    list_prompt = input("would you like to list all contacts y/n ")
-    if list_prompt == "y":
-        for contact in Contact.select():
-            print(f"{contact.name}\n{contact.birthday}\n{contact.number}\n\n")
+    for contact in Contact.select():
+        print(f"{contact.name}\n{contact.birthday}\n{contact.number}\n\n")
 
 
 def search():
